@@ -1,0 +1,5 @@
+<!-- status-badge: small pill, e.g. uptime/service status (Uptime Kuma style). -->
+<span style="display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;background:{{#if status.ok}}#dcfce7{{else}}#fee2e2{{/if}};color:{{#if status.ok}}#166534{{else}}#991b1b{{/if}};">
+  <span style="width:7px;height:7px;border-radius:50%;background:{{#if status.ok}}#22c55e{{else}}#ef4444{{/if}};"></span>
+  {{#if status.label}}{{status.label}}{{else}}{{#if status.ok}}Operational{{else}}Down{{/if}}{{/if}}
+</span>

@@ -1,0 +1,19 @@
+{
+  "name": "component-fetch",
+  "version": "1.0.0",
+  "description": "Pull a named UI component or block from shadcn, magicui, 21st.dev, or hyperui — raw source plus a dependency manifest, no API key needed.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "private": true,
+  "bin": {
+    "component-fetch": "./fetch.mjs",
+    "cfetch": "./fetch.mjs"
+  },
+  "files": [
+    "fetch.mjs",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

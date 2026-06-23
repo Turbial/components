@@ -1,0 +1,14 @@
+<!-- notice: alert/notification banner. Adapted from shadcn alert.tsx.
+     Covers in-app notification copy (payment failed, preview ready, etc). -->
+<div role="alert" style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:var(--radius,10px);border:1px solid {{#if notice.destructive}}#fecaca{{else}}var(--border,#e5e5e5){{/if}};background:{{#if notice.destructive}}#fef2f2{{else}}var(--surface,#fff){{/if}};">
+  <div>
+    <p style="margin:0 0 2px;font-size:14px;font-weight:600;color:{{#if notice.destructive}}#b91c1c{{else}}var(--text,#18181b){{/if}};">
+      {{notice.title}}
+    </p>
+    {{#if notice.body}}
+      <p style="margin:0;font-size:13.5px;color:{{#if notice.destructive}}#b91c1c{{else}}var(--muted,#71717a){{/if}};">
+        {{notice.body}}
+      </p>
+    {{/if}}
+  </div>
+</div>

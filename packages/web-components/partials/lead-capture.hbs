@@ -1,0 +1,19 @@
+<!-- lead-capture: single-field email capture (newsletter / CRM-lite lead form).
+     Hand-authored — no free library match for this exact pattern. -->
+<section style="padding:48px 24px;background:var(--bg,#fafafa);">
+  <div style="max-width:480px;margin:0 auto;text-align:center;">
+    <h3 style="margin:0 0 6px;font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--text,#18181b);">
+      {{#if lead.title}}{{lead.title}}{{else}}Stay in the loop{{/if}}
+    </h3>
+    <p style="margin:0 0 20px;font-size:14px;color:var(--muted,#71717a);">
+      {{#if lead.subtitle}}{{lead.subtitle}}{{else}}Get updates from {{business.name}}, no spam.{{/if}}
+    </p>
+    <form method="post" action="{{#if lead.submitAction}}{{lead.submitAction}}{{else}}#{{/if}}" style="display:flex;gap:8px;">
+      <input name="email" type="email" required placeholder="you@example.com"
+        style="flex:1;padding:10px 12px;border:1px solid var(--border,#e5e5e5);border-radius:8px;font-size:14px;background:var(--surface,#fff);color:var(--text,#18181b);">
+      <button type="submit" style="padding:10px 18px;border:none;border-radius:var(--radius,10px);background:var(--accent,#18181b);color:#fff;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;">
+        {{#if lead.cta}}{{lead.cta}}{{else}}Subscribe{{/if}}
+      </button>
+    </form>
+  </div>
+</section>

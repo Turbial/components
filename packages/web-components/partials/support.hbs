@@ -1,0 +1,40 @@
+<!-- support: contact/help form. Adapted from hyperui marketing/contact-forms/1
+     (name, email, message, submit). Relies on the same CSS variables every
+     template defines on its root wrapper. -->
+<section style="padding:72px 24px;display:flex;justify-content:center;background:var(--bg,#fafafa);">
+  <div style="width:100%;max-width:480px;background:var(--surface,#fff);border:1px solid var(--border,#e5e5e5);border-radius:var(--radius-lg,16px);box-shadow:var(--shadow,0 1px 3px rgba(0,0,0,.08));padding:32px;">
+    <h2 style="margin:0 0 6px;font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--text,#18181b);">
+      {{#if support.title}}{{support.title}}{{else}}Contact support{{/if}}
+    </h2>
+    <p style="margin:0 0 24px;font-size:14px;color:var(--muted,#71717a);">
+      {{#if support.subtitle}}{{support.subtitle}}{{else}}Have a question? The {{business.name}} team usually replies within a day.{{/if}}
+    </p>
+
+    <form method="post" action="{{#if support.submitAction}}{{support.submitAction}}{{else}}#{{/if}}" style="display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <label for="support-name" style="display:block;margin-bottom:6px;font-size:13px;font-weight:600;color:var(--text,#18181b);">Name</label>
+        <input id="support-name" name="name" type="text" required placeholder="Your name"
+          style="width:100%;padding:10px 12px;border:1px solid var(--border,#e5e5e5);border-radius:8px;font-size:14px;background:var(--bg,#fff);color:var(--text,#18181b);">
+      </div>
+      <div>
+        <label for="support-email" style="display:block;margin-bottom:6px;font-size:13px;font-weight:600;color:var(--text,#18181b);">Email</label>
+        <input id="support-email" name="email" type="email" required placeholder="you@example.com"
+          style="width:100%;padding:10px 12px;border:1px solid var(--border,#e5e5e5);border-radius:8px;font-size:14px;background:var(--bg,#fff);color:var(--text,#18181b);">
+      </div>
+      <div>
+        <label for="support-message" style="display:block;margin-bottom:6px;font-size:13px;font-weight:600;color:var(--text,#18181b);">Message</label>
+        <textarea id="support-message" name="message" rows="4" required placeholder="How can we help?"
+          style="width:100%;padding:10px 12px;border:1px solid var(--border,#e5e5e5);border-radius:8px;font-size:14px;background:var(--bg,#fff);color:var(--text,#18181b);resize:vertical;"></textarea>
+      </div>
+      <button type="submit" style="width:100%;padding:11px;border:none;border-radius:var(--radius,10px);background:var(--accent,#18181b);color:#fff;font-size:14.5px;font-weight:600;cursor:pointer;">
+        Send message
+      </button>
+    </form>
+
+    {{#if support.email}}
+      <p style="margin:20px 0 0;text-align:center;font-size:13.5px;color:var(--muted,#71717a);">
+        Or email us directly at <a href="mailto:{{support.email}}" style="color:var(--text,#18181b);font-weight:600;text-decoration:underline;">{{support.email}}</a>
+      </p>
+    {{/if}}
+  </div>
+</section>
